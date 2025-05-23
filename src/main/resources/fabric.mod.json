@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "minecraftrivals",
+  "version": "${version}",
+  "name": "MinecraftRivals",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/minecraftrivals/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "org.nulladmin1.minecraftrivals.client.MinecraftrivalsDataGenerator"
+    ],
+    "client": [
+      "org.nulladmin1.minecraftrivals.client.MinecraftrivalsClient"
+    ],
+    "main": [
+      "org.nulladmin1.minecraftrivals.Minecraftrivals"
+    ]
+  },
+  "mixins": [
+    "minecraftrivals.mixins.json",
+    {
+      "config": "minecraftrivals.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}

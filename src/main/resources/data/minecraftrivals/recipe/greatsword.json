@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " ##",
+    "RN#",
+    "#R "
+  ],
+  "key": {
+    "#": "minecraft:iron_block",
+    "R": "minecraft:redstone_block",
+    "N": "minecraft:netherite_sword"
+  },
+  "result": {
+    "id": "minecraftrivals:greatsword",
+    "count": 1
+  }
+}

@@ -7,14 +7,14 @@ import net.minecraft.component.type.ConsumableComponents;
 import net.minecraft.component.type.FoodComponent;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
+import net.minecraft.item.*;
 import net.minecraft.item.consume.ApplyEffectsConsumeEffect;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
@@ -53,9 +53,18 @@ public class ModItems {
     );
 
     // Magneto's Greatsword
+    public static final ToolMaterial MAGNETIC_ALLOY = new ToolMaterial(
+            BlockTags.INCORRECT_FOR_NETHERITE_TOOL,
+            3000,
+            8.0f,
+            4.0f,
+            18,
+            ItemTags.IRON_TOOL_MATERIALS
+    );
+
     public static final Item GREATSWORD = register(
             "greatsword",
-            Item::new,
+            settings -> new SwordItem(ModItems.MAGNETIC_ALLOY, 16, -3.5f, settings),
             new Item.Settings()
     );
 

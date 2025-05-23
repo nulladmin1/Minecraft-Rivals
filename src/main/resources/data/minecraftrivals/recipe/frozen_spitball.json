@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "#C#",
+    " # "
+  ],
+  "key": {
+    "#": "minecraft:ice",
+    "C": "minecraft:cod"
+  },
+  "result": {
+    "id": "minecraftrivals:frozen_spitball",
+    "count": 1
+  }
+}

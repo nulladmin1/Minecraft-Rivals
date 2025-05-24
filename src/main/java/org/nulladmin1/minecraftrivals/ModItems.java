@@ -2,6 +2,7 @@ package org.nulladmin1.minecraftrivals;
 
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.fabricmc.fabric.api.registry.FabricBrewingRecipeRegistryBuilder;
 import net.minecraft.component.type.ConsumableComponent;
 import net.minecraft.component.type.ConsumableComponents;
 import net.minecraft.component.type.FoodComponent;
@@ -10,6 +11,7 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.*;
 import net.minecraft.item.consume.ApplyEffectsConsumeEffect;
 import net.minecraft.potion.Potion;
+import net.minecraft.potion.Potions;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
@@ -71,6 +73,18 @@ public class ModItems {
             new Item.Settings()
     );
 
+    // Venom's Symbiote
+    public static final Potion SYMBIOTE = Registry.register(
+            Registries.POTION,
+            Identifier.of(MOD_ID, "symbiote"),
+            new Potion("symbiote",
+                    new StatusEffectInstance(StatusEffects.REGENERATION, 20 * 30, 2),
+                    new StatusEffectInstance(StatusEffects.JUMP_BOOST, 20 * 30, 2),
+                    new StatusEffectInstance(StatusEffects.HEALTH_BOOST, 20 * 60, 2)
+            )
+    );
+
+
     // ItemGroup
     public static final RegistryKey<ItemGroup> MINECRAFT_RIVALS_ITEM_GROUP_KEY = RegistryKey.of(Registries.ITEM_GROUP.getKey(), Identifier.of(MOD_ID, "minecraft_rivals_items"));
     public static final ItemGroup MINECRAFT_RIVALS_ITEM_GROUP = FabricItemGroup.builder()
@@ -88,6 +102,14 @@ public class ModItems {
     }
 
     public static void initialize() {
+        FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {
+            builder.registerPotionRecipe(
+                    Potions.INFESTED,
+                    Items.BLACK_DYE,
+                    Registries.POTION.getEntry(SYMBIOTE)
+            );
+        });
+
         registerItemGroup();
     }
 }

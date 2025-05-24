@@ -1,12 +1,11 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    " ##",
-    "RN#",
-    "#R "
+    " RR",
+    "RNR",
+    "NR "
   ],
   "key": {
-    "#": "minecraft:iron_block",
     "R": "minecraft:gold_block",
     "N": "minecraft:netherite_sword"
   },

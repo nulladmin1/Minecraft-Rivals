@@ -57,8 +57,8 @@ public class ModItems {
             new Item.Settings().food(FROZEN_SPITBALL_FOOD_COMPONENT, FROZEN_SPITBALL_CONSUMABLE_COMPONENT)
     );
 
-    // Magneto's Greatsword
-    public static final ToolMaterial MAGNETIC_ALLOY = new ToolMaterial(
+    // Magik's Soulsword
+    public static final ToolMaterial ILLYANAS_LIFE_FORCE = new ToolMaterial(
             BlockTags.INCORRECT_FOR_NETHERITE_TOOL,
             3000,
             8.0f,
@@ -67,9 +67,9 @@ public class ModItems {
             ItemTags.IRON_TOOL_MATERIALS
     );
 
-    public static final Item GREATSWORD = register(
-            "greatsword",
-            settings -> new SwordItem(ModItems.MAGNETIC_ALLOY, 16, -3.5f, settings),
+    public static final Item SOULSWORD = register(
+            "soulsword",
+            settings -> new SwordItem(ModItems.ILLYANAS_LIFE_FORCE, 16, -3.5f, settings),
             new Item.Settings()
     );
 
@@ -97,7 +97,7 @@ public class ModItems {
         Registry.register(Registries.ITEM_GROUP, MINECRAFT_RIVALS_ITEM_GROUP_KEY, MINECRAFT_RIVALS_ITEM_GROUP);
         ItemGroupEvents.modifyEntriesEvent(MINECRAFT_RIVALS_ITEM_GROUP_KEY).register(itemGroup -> {
             itemGroup.add(ModItems.FROZEN_SPITBALL);
-            itemGroup.add(ModItems.GREATSWORD);
+            itemGroup.add(ModItems.SOULSWORD);
         });
     }
 

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "minecraftrivals:item/greatsword"
+    "layer0": "minecraftrivals:item/soulsword"
   }
 }

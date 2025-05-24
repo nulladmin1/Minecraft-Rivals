@@ -7,11 +7,11 @@
   ],
   "key": {
     "#": "minecraft:iron_block",
-    "R": "minecraft:redstone_block",
+    "R": "minecraft:gold_block",
     "N": "minecraft:netherite_sword"
   },
   "result": {
-    "id": "minecraftrivals:greatsword",
+    "id": "minecraftrivals:soulsword",
     "count": 1
   }
 }

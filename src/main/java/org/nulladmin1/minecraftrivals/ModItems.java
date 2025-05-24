@@ -9,6 +9,7 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.*;
 import net.minecraft.item.consume.ApplyEffectsConsumeEffect;
+import net.minecraft.potion.Potion;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
@@ -21,9 +22,11 @@ import net.minecraft.util.Identifier;
 import java.util.function.Function;
 
 public class ModItems {
+    public static final String MOD_ID = "minecraftrivals";
+
     public static Item register(String name, Function<Item.Settings, Item> itemFactory, Item.Settings settings) {
         // Create the item key
-        RegistryKey<Item> itemKey = RegistryKey.of(RegistryKeys.ITEM, Identifier.of("minecraftrivals", name));
+        RegistryKey<Item> itemKey = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(MOD_ID, name));
 
         // Create the Item instance
         Item item = itemFactory.apply(settings.registryKey(itemKey));
@@ -69,7 +72,7 @@ public class ModItems {
     );
 
     // ItemGroup
-    public static final RegistryKey<ItemGroup> MINECRAFT_RIVALS_ITEM_GROUP_KEY = RegistryKey.of(Registries.ITEM_GROUP.getKey(), Identifier.of("minecraftrivals", "minecraft_rivals_items"));
+    public static final RegistryKey<ItemGroup> MINECRAFT_RIVALS_ITEM_GROUP_KEY = RegistryKey.of(Registries.ITEM_GROUP.getKey(), Identifier.of(MOD_ID, "minecraft_rivals_items"));
     public static final ItemGroup MINECRAFT_RIVALS_ITEM_GROUP = FabricItemGroup.builder()
             .icon(() -> new ItemStack(ModItems.FROZEN_SPITBALL))
             .displayName(Text.translatable("itemGroup.minecraft_rivals_items"))

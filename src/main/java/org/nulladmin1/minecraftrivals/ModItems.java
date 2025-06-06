@@ -3,6 +3,8 @@ package org.nulladmin1.minecraftrivals;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.registry.FabricBrewingRecipeRegistryBuilder;
+import net.minecraft.block.AbstractBlock;
+import net.minecraft.block.Block;
 import net.minecraft.component.type.ConsumableComponent;
 import net.minecraft.component.type.ConsumableComponents;
 import net.minecraft.component.type.FoodComponent;
@@ -18,6 +20,7 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.registry.tag.ItemTags;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
@@ -38,6 +41,19 @@ public class ModItems {
         Registry.register(Registries.ITEM, itemKey, item);
 
         return item;
+    }
+
+    public static Block register(String name, Function<AbstractBlock.Settings, Block> blockFactory, AbstractBlock.Settings settings, boolean shouldRegisterItem) {
+        RegistryKey<Block> blockKey = RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MOD_ID, name));
+        Block block = blockFactory.apply(settings.registryKey(blockKey));
+
+        if (shouldRegisterItem) {
+            RegistryKey<Item> itemKey = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(MOD_ID, name));
+            BlockItem blockItem = new BlockItem(block, new Item.Settings().registryKey(itemKey));
+            Registry.register(Registries.ITEM, itemKey, blockItem);
+        }
+
+        return Registry.register(Registries.BLOCK, blockKey, block);
     }
 
     // Frozen Spitball
@@ -92,6 +108,21 @@ public class ModItems {
             new Item.Settings().rarity(Rarity.EPIC).maxCount(1)
     );
 
+    // Thornlash Wall and Child
+    public static final Block THORNLASH_WALL = register(
+            "thornlash_wall",
+            ThornlashWall::new,
+            AbstractBlock.Settings.create(),
+            true
+    );
+
+    public static final Block THORNLASH_WALL_CHILD = register(
+      "thornlash_wall_child",
+            ThornlashWallChild::new,
+            AbstractBlock.Settings.create().sounds(BlockSoundGroup.WOOD).hardness(10.0f).resistance(1200.0f),
+            false
+    );
+
     // ItemGroup
     public static final RegistryKey<ItemGroup> MINECRAFT_RIVALS_ITEM_GROUP_KEY = RegistryKey.of(Registries.ITEM_GROUP.getKey(), Identifier.of(MOD_ID, "minecraft_rivals_items"));
     public static final ItemGroup MINECRAFT_RIVALS_ITEM_GROUP = FabricItemGroup.builder()
@@ -106,6 +137,7 @@ public class ModItems {
             itemGroup.add(ModItems.FROZEN_SPITBALL);
             itemGroup.add(ModItems.SOULSWORD);
             itemGroup.add(ModItems.ASTRAL_FLOCK);
+            itemGroup.add(ModItems.THORNLASH_WALL.asItem());
         });
     }
 

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "#O#",
+    " # "
+  ],
+  "key": {
+    "#": "minecraft:oak_log",
+    "O": "minecraft:oak_sapling"
+  },
+  "result": {
+    "id": "minecraftrivals:thornlash_wall",
+    "count": 2
+  }
+}

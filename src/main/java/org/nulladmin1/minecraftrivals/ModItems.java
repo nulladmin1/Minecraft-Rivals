@@ -118,7 +118,7 @@ public class ModItems {
 
     public static final Block THORNLASH_WALL_CHILD = register(
       "thornlash_wall_child",
-            ThornlashWallChild::new,
+            Block::new,
             AbstractBlock.Settings.create().sounds(BlockSoundGroup.WOOD).hardness(10.0f).resistance(1200.0f),
             false
     );

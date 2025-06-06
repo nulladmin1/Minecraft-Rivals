@@ -25,6 +25,14 @@ Crafting Recipe:
 
 ![Soulsword Crafting Recipe](https://github.com/nulladmin1/Minecraft-Rivals/blob/main/.github/assets/soulsword_recipe.png?raw=true)
 
+## ![Hela's Astral Flock](https://github.com/nulladmin1/Minecraft-Rivals/blob/main/src/main/resources/assets/minecraftrivals/textures/item/astral_flock.png?raw=true) Hela's Astral Flock
+An item that teleports the user 18 blocks in front and then gives them `Slow Falling`
+
+Crafting Recipe:
+
+![Astral Flock Crafting Recipe](https://github.com/nulladmin1/Minecraft-Rivals/blob/main/.github/assets/astral_flock.png?raw=true)
+
+
 ## Venom's Symbiote
 
 A potion that gives the player:

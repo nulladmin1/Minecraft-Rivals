@@ -32,6 +32,13 @@ Crafting Recipe:
 
 ![Astral Flock Crafting Recipe](https://github.com/nulladmin1/Minecraft-Rivals/blob/main/.github/assets/astral_flock.png?raw=true)
 
+## ![Groot's Thornlash Wall](https://github.com/nulladmin1/Minecraft-Rivals/blob/main/src/main/resources/assets/minecraftrivals/textures/block/thornlash_wall.png?raw=true) Groot's Thornlash Wall
+A 3x3 block with slow breaking times and high blast resistance
+
+Crafting Recipe:
+
+![Thornlash Wall Crafting Recipe](https://github.com/nulladmin1/Minecraft-Rivals/blob/main/.github/assets/thornlash_wall.png?raw=true)
+
 
 ## Venom's Symbiote
 

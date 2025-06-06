@@ -142,13 +142,11 @@ public class ModItems {
     }
 
     public static void initialize() {
-        FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {
-            builder.registerPotionRecipe(
-                    Potions.INFESTED,
-                    Items.BLACK_DYE,
-                    Registries.POTION.getEntry(SYMBIOTE)
-            );
-        });
+        FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> builder.registerPotionRecipe(
+                Potions.INFESTED,
+                Items.BLACK_DYE,
+                Registries.POTION.getEntry(SYMBIOTE)
+        ));
 
         registerItemGroup();
     }

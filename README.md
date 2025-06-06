@@ -1,9 +1,11 @@
 # Minecraft Rivals
 A random collection of items themed after [Marvel Rivals, a 6v6 Hero Shooter themed with the Marvel Universe](https://www.marvelrivals.com/),
 
-This modpack includes `3` items:
+This modpack includes `5` items:
 - [Jeff's Frozen Spitball](#-jeffs-frozen-spitball)
 - [Magik's Soulsword](#-magikss-soulsword)
+- [Hela's Astral Flock](#-helas-astral-flock)
+- [Groot's Thornlash Walls](#-groots-thornlash-wall)
 - [Venom's Symbiote](#venoms-symbiote)
 
 ## ![Frozen Spitball](https://github.com/nulladmin1/Minecraft-Rivals/blob/main/src/main/resources/assets/minecraftrivals/textures/item/frozen_spitball.png?raw=true) Jeff's Frozen Spitball

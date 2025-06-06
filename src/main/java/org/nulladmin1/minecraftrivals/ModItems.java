@@ -20,6 +20,7 @@ import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.Rarity;
 
 import java.util.function.Function;
 
@@ -54,7 +55,7 @@ public class ModItems {
     public static final Item FROZEN_SPITBALL = register(
             "frozen_spitball",
             Item::new,
-            new Item.Settings().food(FROZEN_SPITBALL_FOOD_COMPONENT, FROZEN_SPITBALL_CONSUMABLE_COMPONENT)
+            new Item.Settings().food(FROZEN_SPITBALL_FOOD_COMPONENT, FROZEN_SPITBALL_CONSUMABLE_COMPONENT).rarity(Rarity.COMMON)
     );
 
     // Magik's Soulsword
@@ -70,7 +71,7 @@ public class ModItems {
     public static final Item SOULSWORD = register(
             "soulsword",
             settings -> new SwordItem(ModItems.ILLYANAS_LIFE_FORCE, 16, -3.5f, settings),
-            new Item.Settings()
+            new Item.Settings().rarity(Rarity.EPIC).maxCount(1)
     );
 
     // Venom's Symbiote
@@ -84,6 +85,12 @@ public class ModItems {
             )
     );
 
+    // AstralFlock
+    public static final Item ASTRAL_FLOCK = register(
+            "astral_flock",
+            AstralFlock::new,
+            new Item.Settings().rarity(Rarity.EPIC).maxCount(1)
+    );
 
     // ItemGroup
     public static final RegistryKey<ItemGroup> MINECRAFT_RIVALS_ITEM_GROUP_KEY = RegistryKey.of(Registries.ITEM_GROUP.getKey(), Identifier.of(MOD_ID, "minecraft_rivals_items"));
@@ -98,6 +105,7 @@ public class ModItems {
         ItemGroupEvents.modifyEntriesEvent(MINECRAFT_RIVALS_ITEM_GROUP_KEY).register(itemGroup -> {
             itemGroup.add(ModItems.FROZEN_SPITBALL);
             itemGroup.add(ModItems.SOULSWORD);
+            itemGroup.add(ModItems.ASTRAL_FLOCK);
         });
     }
 

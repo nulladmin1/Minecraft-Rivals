@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "GEG",
+    " S "
+  ],
+  "key": {
+    "#": "minecraft:emerald_block",
+    "G": "minecraft:ghast_tear",
+    "E": "minecraft:ender_pearl",
+    "S": "minecraft:soul_sand"
+  },
+  "result": {
+    "id": "minecraftrivals:astral_flock",
+    "count": 1
+  }
+}

@@ -7,5 +7,7 @@
   "item.minecraft.potion.effect.symbiote": "Venom's Symbiote",
   "item.minecraft.splash_potion.effect.symbiote": "Venom's Splash Symbiote",
   "item.minecraft.lingering_potion.effect.symbiote": "Venom's Lingering Symbiote",
-  "item.minecraft.tipped_arrow.effect.symbiote": "Venom's Symbiote Arrows"
+  "item.minecraft.tipped_arrow.effect.symbiote": "Venom's Symbiote Arrows",
+
+  "item.minecraftrivals.astral_flock": "Hela's Astral Flock"
 }

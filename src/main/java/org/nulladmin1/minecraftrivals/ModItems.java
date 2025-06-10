@@ -18,8 +18,6 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
-import net.minecraft.registry.tag.BlockTags;
-import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
@@ -75,18 +73,9 @@ public class ModItems {
     );
 
     // Magik's Soulsword
-    public static final ToolMaterial ILLYANAS_LIFE_FORCE = new ToolMaterial(
-            BlockTags.INCORRECT_FOR_NETHERITE_TOOL,
-            3000,
-            8.0f,
-            4.0f,
-            18,
-            ItemTags.IRON_TOOL_MATERIALS
-    );
-
     public static final Item SOULSWORD = register(
             "soulsword",
-            settings -> new SwordItem(ModItems.ILLYANAS_LIFE_FORCE, 16, -3.5f, settings),
+            Soulsword::new,
             new Item.Settings().rarity(Rarity.EPIC).maxCount(1)
     );
 
